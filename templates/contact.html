@@ -1,45 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-<section class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Contact</p>
-    <h1>Contact us</h1>
-    <p>送信処理は実装していないダミーフォームです。UI確認用として利用できます。</p>
-  </div>
-</section>
-
-<section class="container section contact-layout">
-  <form class="contact-form reveal">
-    <label>
-      Name
-      <input type="text" placeholder="Your name">
-    </label>
-    <label>
-      Email
-      <input type="email" placeholder="you@example.com">
-    </label>
-    <label>
-      Category
-      <select>
-        <option>Product inquiry</option>
-        <option>Business consultation</option>
-        <option>Support request</option>
-      </select>
-    </label>
-    <label>
-      Message
-      <textarea rows="6" placeholder="Tell us about your project"></textarea>
-    </label>
-    <button class="button primary" type="button">Submit demo</button>
-  </form>
-
-  <aside class="contact-panel reveal">
-    <img src="{{ url_for('static', filename='img/contact-desk.png') }}" alt="お問い合わせページ用イメージ">
-    <h2>Training notes</h2>
-    <p>
-      このフォームはデモ用の静的UIです。実運用ではサーバー側の入力検証、
-      CSRF対策、メール送信、ログ管理、個人情報保護対応が必要です。
-    </p>
-  </aside>
-</section>
+{% extends "base.html" %}{% block content %}
+<section class="page-hero"><div class="container"><p class="eyebrow">Contact</p><h1>お問い合わせ</h1><p>商品、店舗でのお取り扱い、イベント展示に関するお問い合わせを受け付けています。</p></div></section>
+<section class="container section contact-layout"><form class="contact-form reveal"><label>お名前<input type="text" placeholder="山田 太郎"></label><label>メールアドレス<input type="email" placeholder="you@example.com"></label><label>お問い合わせ種別<select><option>商品について</option><option>店舗での取り扱いについて</option><option>イベント・展示について</option><option>その他</option></select></label><label>お問い合わせ内容<textarea rows="6" placeholder="お問い合わせ内容を入力してください"></textarea></label><button class="button primary" type="button">送信内容を確認</button></form><aside class="contact-panel reveal"><img src="{{ url_for('static', filename='img/contact-desk.png') }}" alt="お問い合わせページ用イメージ"><h2>お気軽にご相談ください</h2><p>商品の特徴、ギフト向けの選び方、店頭展示に関するご相談など、ABCトイズの商品に関するお問い合わせを承ります。</p></aside></section>
 {% endblock %}

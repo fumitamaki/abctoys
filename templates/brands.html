@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-hero"><div class="container"><p class="eyebrow">Brand story</p><h1>Brands</h1><p>ABCトイズの商品は、遊びの体験を中心に企画されています。子どもたちが何度も手に取りたくなる玩具を目指しています。</p></div></section>
+<section class="container section media-split reverse"><div class="stack-copy"><p class="eyebrow">How we create</p><h2>小さな「できた」を積み重ねる玩具づくり</h2><p>商品の見た目だけでなく、握りやすさ、並べやすさ、親子で説明しやすいことまで考慮しています。店頭での見つけやすさやギフトとしての選びやすさも大切にしています。</p></div><div class="media-frame reveal"><img src="{{ url_for('static', filename='img/contact-desk.png') }}" alt="ABCトイズの商品企画イメージ"></div></section>
+<section class="container section"><div class="timeline">{% for step in steps %}<div class="timeline-item reveal"><span>{{ loop.index }}</span><div><h2>Step {{ loop.index }}</h2><p>{{ step }}</p></div></div>{% endfor %}</div></section>
+{% endblock %}

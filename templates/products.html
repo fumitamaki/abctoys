@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-hero"><div class="container"><p class="eyebrow">Product lineup</p><h1>Products</h1><p>ABCトイズが展開する、子どもたちの好奇心を育む商品シリーズです。</p></div></section>
+<section class="container section media-split"><div class="media-frame reveal"><img src="{{ url_for('static', filename='img/team-meeting.png') }}" alt="商品企画会議イメージ"></div><div class="stack-copy"><p class="eyebrow">Design concept</p><h2>見て、触れて、考えて楽しむ。</h2><p>色や形の楽しさ、手に取ったときの質感、片づけやすさまで考えた商品づくりを行っています。親子で一緒に遊びながら、自然に会話が生まれるような玩具を目指しています。</p></div></section>
+<section class="container card-grid section">{% for item in items %}<article class="feature-card reveal"><div class="icon">{{ loop.index }}</div><h2>{{ item.title }}</h2><p>{{ item.text }}</p><a href="{{ url_for('contact') }}">お問い合わせ →</a></article>{% endfor %}</section>
+{% endblock %}

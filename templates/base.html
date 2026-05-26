@@ -4,58 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }} | {{ company.name }}</title>
-  <meta name="description" content="Azure App Service technical training demo website for fictional company ABC Toys.">
+  <meta name="description" content="株式会社ABCトイズは、子どもたちの想像力を育む玩具を企画・販売する架空の玩具メーカーです。">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar container">
-      <a class="brand" href="{{ url_for('home') }}" aria-label="{{ company.name }} Home">
-        <span class="brand-mark">ABC</span>
-        <span class="brand-text">{{ company.name }}</span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links">
-        {% for page in pages %}
-          <a href="{{ url_for(page.endpoint) }}" class="{% if request.endpoint == page.endpoint %}active{% endif %}">
-            {{ page.label }}
-          </a>
-        {% endfor %}
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand footer-brand">
-          <span class="brand-mark">ABC</span>
-          <span class="brand-text">{{ company.name }}</span>
-        </div>
-        <p>
-          Azure App Service 技術研修用のデモサイトです。
-          {{ company.name }} は架空の企業であり、掲載内容はすべてダミーです。
-        </p>
-      </div>
-      <div>
-        <p class="footer-title">Demo endpoints</p>
-        <a href="{{ url_for('health') }}">/health</a>
-      </div>
-      <div>
-        <p class="footer-title">Deployment target</p>
-        <p>Azure App Service / Python / Flask / GitHub</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+<header class="site-header"><nav class="navbar container">
+  <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">ABC</span><span class="brand-text">{{ company.name }}</span></a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-links">{% for page in pages %}<a href="{{ url_for(page.endpoint) }}" class="{% if request.endpoint == page.endpoint %}active{% endif %}">{{ page.label }}</a>{% endfor %}</div>
+</nav></header>
+<main>{% block content %}{% endblock %}</main>
+<footer class="site-footer"><div class="container footer-grid">
+  <div><div class="brand footer-brand"><span class="brand-mark">ABC</span><span class="brand-text">{{ company.name }}</span></div><p>{{ company.tagline }} 子どもたちの毎日に、安心して楽しめる遊びの時間を届けます。</p></div>
+  <div><p class="footer-title">Products</p><a href="{{ url_for('products') }}">ABC Blocks</a><br><a href="{{ url_for('products') }}">Mori Friends</a><br><a href="{{ url_for('products') }}">Tiny Wheels</a></div>
+  <div><p class="footer-title">Company</p><a href="{{ url_for('about') }}">About us</a><br><a href="{{ url_for('contact') }}">Contact</a></div>
+</div></footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body></html>
