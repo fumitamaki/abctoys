@@ -1,5 +1,5 @@
 {% extends "base.html" %}{% block content %}
-<section class="page-hero"><div class="container"><p class="eyebrow">Stores and displays</p><h1>Stores</h1><p>店頭やショールームでの商品展示をイメージしたページです。</p></div></section>
+<section class="page-hero"><div class="container"><p class="eyebrow">Stores and displays</p><h1>Stores</h1><p>店頭やショールームでの商品展示を行っています。</p></div></section>
 <section class="container section image-highlight"><div class="content-card reveal"><div class="section-head"><div><p class="eyebrow">Showroom image</p><h2>見ているだけで楽しくなる売り場へ</h2></div><p>明るく見やすい展示で、商品ごとの魅力が伝わる空間づくりをイメージしています。</p></div><img src="{{ url_for('static', filename='img/toy-showroom.png') }}" alt="ABCトイズの店舗展示イメージ"></div></section>
 <section class="container section case-list">{% for case in cases %}<article class="case-card reveal"><span class="tag">{{ case.tag }}</span><h2>{{ case.name }}</h2><p>{{ case.summary }}</p></article>{% endfor %}</section>
 {% endblock %}
