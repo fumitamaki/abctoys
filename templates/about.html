@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">About us</p>
+    <h1>{{ company.name }}について</h1>
+    <p>
+      玩具メーカー風の企業サイトとして、会社概要ページらしい情報を配置しています。
+      内容はすべてデモ用のダミーです。
+    </p>
+  </div>
+</section>
+
+<section class="container section media-split">
+  <div class="media-frame reveal">
+    <img src="{{ url_for('static', filename='img/hero-showroom.png') }}" alt="株式会社ABCトイズのオフィス・ショールームイメージ">
+  </div>
+  <div class="stack-copy">
+    <p class="eyebrow">Corporate profile</p>
+    <h2>楽しい体験を、わかりやすいWebサイトで伝える</h2>
+    <p>
+      このページは、App Service 上で動作する一般的な企業サイトの雰囲気を再現するためのものです。
+      実際の会社情報、商品情報、顧客情報は含まれていません。
+    </p>
+  </div>
+</section>
+
+<section class="container card-grid section">
+  {% for value in values %}
+  <article class="feature-card reveal">
+    <div class="icon">{{ loop.index }}</div>
+    <h2>{{ value.title }}</h2>
+    <p>{{ value.text }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

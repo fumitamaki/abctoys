@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Service catalog</p>
+    <h1>Services</h1>
+    <p>玩具メーカーの企業サイトらしいサービス一覧として見せられるページです。</p>
+  </div>
+</section>
+
+<section class="container section media-split">
+  <div class="media-frame reveal">
+    <img src="{{ url_for('static', filename='img/team-meeting.png') }}" alt="サービス企画会議イメージ">
+  </div>
+  <div class="stack-copy">
+    <p class="eyebrow">Planning and delivery</p>
+    <h2>企画から販売支援までをカバー</h2>
+    <p>
+      商品企画、キャンペーンサイト、販売データ活用などを想定したダミーサービス紹介です。
+      Azure App Service のWebアプリ公開デモとして、実務に近い画面遷移を見せられます。
+    </p>
+  </div>
+</section>
+
+<section class="container card-grid section">
+  {% for item in items %}
+  <article class="feature-card reveal">
+    <div class="icon">{{ loop.index }}</div>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.text }}</p>
+    <a href="{{ url_for('contact') }}">Learn more →</a>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

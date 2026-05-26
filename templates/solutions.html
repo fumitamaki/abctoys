@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Deployment scenario</p>
+    <h1>Solutions</h1>
+    <p>
+      GitHub に配置したコードを Azure App Service へ単発デプロイする研修シナリオを想定しています。
+    </p>
+  </div>
+</section>
+
+<section class="container section media-split reverse">
+  <div class="stack-copy">
+    <p class="eyebrow">For Azure training</p>
+    <h2>GitHubを使用し、継続的デプロイは前提にしない構成</h2>
+    <p>
+      リポジトリは別途用意し、初回のみ GitHub から取り込む、または GitHub から取得したコードを ZIP デプロイする想定です。
+      継続的デプロイを使わない場合、初回デプロイ後に連携やワークフローを無効化できます。
+    </p>
+  </div>
+  <div class="media-frame reveal">
+    <img src="{{ url_for('static', filename='img/contact-desk.png') }}" alt="GitHubとAzureデプロイ説明用のデスクイメージ">
+  </div>
+</section>
+
+<section class="container section">
+  <div class="timeline">
+    {% for step in roadmap %}
+    <div class="timeline-item reveal">
+      <span>{{ loop.index }}</span>
+      <div>
+        <h2>Step {{ loop.index }}</h2>
+        <p>{{ step }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

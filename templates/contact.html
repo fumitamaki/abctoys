@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Contact us</h1>
+    <p>送信処理は実装していないダミーフォームです。UI確認用として利用できます。</p>
+  </div>
+</section>
+
+<section class="container section contact-layout">
+  <form class="contact-form reveal">
+    <label>
+      Name
+      <input type="text" placeholder="Your name">
+    </label>
+    <label>
+      Email
+      <input type="email" placeholder="you@example.com">
+    </label>
+    <label>
+      Category
+      <select>
+        <option>Product inquiry</option>
+        <option>Business consultation</option>
+        <option>Support request</option>
+      </select>
+    </label>
+    <label>
+      Message
+      <textarea rows="6" placeholder="Tell us about your project"></textarea>
+    </label>
+    <button class="button primary" type="button">Submit demo</button>
+  </form>
+
+  <aside class="contact-panel reveal">
+    <img src="{{ url_for('static', filename='img/contact-desk.png') }}" alt="お問い合わせページ用イメージ">
+    <h2>Training notes</h2>
+    <p>
+      このフォームはデモ用の静的UIです。実運用ではサーバー側の入力検証、
+      CSRF対策、メール送信、ログ管理、個人情報保護対応が必要です。
+    </p>
+  </aside>
+</section>
+{% endblock %}
