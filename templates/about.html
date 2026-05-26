@@ -1,5 +1,5 @@
 {% extends "base.html" %}{% block content %}
 <section class="page-hero"><div class="container"><p class="eyebrow">About us</p><h1>{{ company.name }}について</h1><p>ABCトイズは、親子の時間を彩る玩具を届ける架空のメーカーです。遊びやすさ、親しみやすいデザイン、安心感を大切にしています。</p></div></section>
-<section class="container section media-split"><div class="media-frame reveal"><img src="{{ url_for('static', filename='img/hero-showroom.png') }}" alt="株式会社ABCトイズのオフィス・ショールームイメージ"></div><div class="stack-copy"><p class="eyebrow">Corporate profile</p><h2>おもちゃを通じて、笑顔のきっかけをつくる。</h2><p>私たちは、遊びの中にある小さな発見を大切にしています。子どもたちが自由に考え、試し、楽しめるような商品づくりを目指しています。</p></div></section>
+<section class="container section media-split"><div class="media-frame reveal"><img src="{{ url_for('static', filename='img/hero-showroom.png') }}" alt="ABCトイズ株式会社のオフィス・ショールームイメージ"></div><div class="stack-copy"><p class="eyebrow">Corporate profile</p><h2>おもちゃを通じて、笑顔のきっかけをつくる。</h2><p>私たちは、遊びの中にある小さな発見を大切にしています。子どもたちが自由に考え、試し、楽しめるような商品づくりを目指しています。</p></div></section>
 <section class="container card-grid section">{% for value in values %}<article class="feature-card reveal"><div class="icon">{{ loop.index }}</div><h2>{{ value.title }}</h2><p>{{ value.text }}</p></article>{% endfor %}</section>
 {% endblock %}

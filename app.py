@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 COMPANY = {
-    "name": "株式会社ABCトイズ",
+    "name": "ABCトイズ株式会社",
     "name_en": "ABC Toys Co., Ltd.",
     "tagline": "わくわくを、カタチに。",
 }
